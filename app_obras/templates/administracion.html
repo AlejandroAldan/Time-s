@@ -53,7 +53,6 @@
         <ul>
           <li><a class="nav-link scrollto" href="/#hero">Inicio</a></li>
           <li><a class="nav-link scrollto" href="nosotros.html">Nosotros</a></li>
-          <li><a class="nav-link scrollto" href="galeria.html">Galería</a></li>
           <li><a class="nav-link scrollto" href="/#contact">Ubicación</a></li>   
           <li><a class="nav-link scrollto" href="mostrar.html">Productos</a></li>  
           {% if user.is_authenticated %}
@@ -111,7 +110,7 @@
                     {% endif %}
                     {% if user.is_authenticated %}
                         <td>
-                            <a href="{% url 'eliminar' ve.idProducto %}" class="btn btn-danger">Eliminar</a>
+                            <a href="" class="btn btn-danger">Eliminar</a>
                         </td>
                     {% else %}
                         <td>

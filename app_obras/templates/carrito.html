@@ -1,50 +1,88 @@
 {% load humanize %}
+<!-- Carga de la biblioteca de filtros humanize de Django -->
+
 <div role="alert">
+    <!-- Div que sirve como contenedor principal con role="alert" para mensajes visuales -->
     <table class="table table-bordered table-striped alert alert-light">
+        <!-- Tabla con clases de Bootstrap para bordes, filas alternadas y estilo de alerta -->
+
         <thead class="thead-light">
+            <!-- Cabecera de la tabla con estilo de fondo claro (thead-light) -->
             <tr class="text-center">
+                <!-- Fila centrada en el texto -->
                 <th colspan="3" style="font-weight:bold; font-size:18px">CARRITO</th>
+                <!-- Título del carrito -->
             </tr>
             <tr>
+                <!-- Segunda fila de la cabecera -->
                 <th style="font-size:15px; font-weight: bold; color:black; text-align: center;">NOMBRE</th>
+                <!-- Columna Nombre -->
                 <th style="font-size:15px; font-weight: bold; color:black; text-align: center;">PRECIO</th>
+                <!-- Columna Precio -->
                 <th style="font-size:15px; font-weight: bold; color:rgb(0, 0, 0); text-align: center;">CANTIDAD</th>
+                <!-- Columna Cantidad -->
             </tr>
         </thead>
+
         <tbody>
+            <!-- Cuerpo de la tabla -->
             {% if request.session.carrito.items %}
-                {% for key, value in request.session.carrito.items %} 
+                <!-- Verifica si hay productos en el carrito -->
+                {% for key, value in request.session.carrito.items %}
+                <!-- Itera sobre cada producto en el carrito -->
                     <tr>
+                        <!-- Fila por cada producto -->
                         <td style="font-size:13px">{{ value.nombre }}</td>
+                        <!-- Nombre del producto -->
                         <td style="font-size:13px">$ {{ value.precio }}</td>
+                        <!-- Precio del producto -->
                         <td style="font-size:13px">
+                            <!-- Cantidad del producto -->
                             {{ value.cantidad }}
                             <br>
+                            <!-- Enlaces para modificar la cantidad -->
                             <a href="{% url 'agregar' value.producto_id %}" class="badge btn btn-success">+</a>
+                            <!-- Enlace para agregar cantidad -->
                             <a href="{% url 'restar'  value.producto_id %}" class="badge btn btn-warning">-</a>
+                            <!-- Enlace para restar cantidad -->
                         </td>
                     </tr>
                     <tr>
+                        <!-- Fila para mostrar el total del producto -->
                         <th colspan="2" style="text-align:right;">Total:</th>
+                        <!-- Columnas fusionadas para alinear texto a la derecha -->
                         <td style="font-size:13px">$ {{ value.total|intcomma }}</td>
+                        <!-- Total del producto formateado con comas -->
                     </tr>
                 {% endfor %}
             {% else %}
+                <!-- Si no hay productos en el carrito -->
                 <tr>
                     <td colspan="3">
+                        <!-- Columnas fusionadas para un mensaje de alerta -->
                         <div class="alert alert-info text-center" style="font-weight: bold;">Sin Productos</div>
+                        <!-- Mensaje de alerta cuando no hay productos -->
                     </td>
                 </tr>
             {% endif %}
         </tbody>
     </table>
     <hr>
+    <!-- Línea horizontal después de la tabla -->
 </div>
+<!-- Cierre del contenedor principal -->
+
 <div class="row text-center">
+    <!-- Div con clase row de Bootstrap, centrado en texto -->
     <div class="col-6">
+        <!-- Primera columna con ancho 6 en grid de 12 -->
         <a href="{% url 'limpiar' %}" class="btn btn-outline-danger">Limpiar Carrito</a>
+        <!-- Enlace para limpiar el carrito -->
     </div> 
     <div class="col-6">
-        <a href="{% url 'procesar_pago' %}" class="btn btn-outline-primary">Comprar</a>
+        <!-- Segunda columna con ancho 6 en grid de 12 -->
+        <a href="" class="btn btn-outline-primary">Comprar</a>
+        <!-- Enlace para proceder a la compra -->
     </div>
 </div>
+<!-- Cierre del div con clase row -->
