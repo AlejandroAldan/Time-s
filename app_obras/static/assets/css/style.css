@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 /**
 * Template Name: Regna
 * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -9,6 +11,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+>>>>>>> ba90e44b5f23998158299067444082098a194063
 
 body {
   background: #323232;
@@ -442,7 +445,11 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
+<<<<<<< HEAD
+  background: url(../img/fondo_reloj.jpg) top center;
+=======
   background: url(../img/gallery3.jpg) top center;
+>>>>>>> ba90e44b5f23998158299067444082098a194063
   background-size: cover;
   position: relative;
 }
@@ -482,7 +489,11 @@ h6 {
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
+<<<<<<< HEAD
+  color: #ffffff;
+=======
   color: #bc9a9a;
+>>>>>>> ba90e44b5f23998158299067444082098a194063
 }
 
 @media (max-width: 768px) {
@@ -1350,11 +1361,14 @@ section {
   min-height: 300px;
   max-height: 360px;
 }
+<<<<<<< HEAD
+=======
 
 a.twitter i, a.facebook i, a.instagram i, a.linkedin i {
   font-size: 20px;
 }
 
+>>>>>>> ba90e44b5f23998158299067444082098a194063
 .clock {
   display: inline-block;
   font-size: 2em;
