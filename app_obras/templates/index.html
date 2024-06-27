@@ -50,7 +50,15 @@
           {% if user.is_authenticated %}
           <li><a class="nav-link scrollto" href="/admin/logout/" onclick="showLogoutMessage(event)">Cerrar Sesión</a></li>
           {% else %}
-          <li><a class="nav-link scrollto" href="/admin/">Login</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Login <i class="bi bi-caret-down-fill"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item text-dark" href="/admin/">Admin</a>
+              <a class="dropdown-item text-dark" href="#">Usuario</a>
+            </div>
+          </li>          
           {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
